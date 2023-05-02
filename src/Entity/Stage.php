@@ -14,17 +14,21 @@ class Stage
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 150)]
+    #[ORM\Column(length: 100)]
     private ?string $Title = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $Description = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $startDate = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $endDate = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $Description = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $Company = null;
 
     public function getId(): ?int
     {
@@ -39,18 +43,6 @@ class Stage
     public function setTitle(string $Title): self
     {
         $this->Title = $Title;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->Description;
-    }
-
-    public function setDescription(string $Description): self
-    {
-        $this->Description = $Description;
 
         return $this;
     }
@@ -75,6 +67,30 @@ class Stage
     public function setEndDate(\DateTimeInterface $endDate): self
     {
         $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->Description;
+    }
+
+    public function setDescription(string $Description): self
+    {
+        $this->Description = $Description;
+
+        return $this;
+    }
+
+    public function getCompany(): ?string
+    {
+        return $this->Company;
+    }
+
+    public function setCompany(string $Company): self
+    {
+        $this->Company = $Company;
 
         return $this;
     }

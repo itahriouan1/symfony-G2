@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stages{% endblock %}
+
+{% block body %}
+<table border="1">
+{% for stage in stages %}
+    <tr>
+        <td>{{stage.getTitle()}}</td>
+        <td>{{stage.getDescription()}}</td>
+        <td>{{stage.getCompany()}}</td>
+        <td>{{stage.getStartDate()|date("d-m-Y")}}</td>
+        <td>{{stage.getEndDate()|date("d-m-Y")}}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
