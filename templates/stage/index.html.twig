@@ -11,7 +11,10 @@
         <td>{{stage.getCompany()}}</td>
         <td>{{stage.getStartDate()|date("d-m-Y")}}</td>
         <td>{{stage.getEndDate()|date("d-m-Y")}}</td>
+        <td><a href="{{path('delete_stage', {id: stage.getId()})}}">supprimer</a></td>
+        <td><a href="{{path('update_stage', {id: stage.getId()})}}">Modifier</a></td>
     </tr>
 {% endfor %}
 </table>
+<a href="{{path('create_stage')}}">nouveau stage</a>
 {% endblock %}
